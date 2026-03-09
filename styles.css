@@ -1,0 +1,31 @@
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
+background:black;
+background-image:url("assets/ash-bg.png");
+background-size:cover;
+}
+
+header{
+background:rgba(0,0,0,.8);
+padding:20px;
+text-align:center;
+}
+
+.logo{
+height:80px;
+}
+
+nav a{
+margin:10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+padding:100px 20px;
+text-align:center;
+}
