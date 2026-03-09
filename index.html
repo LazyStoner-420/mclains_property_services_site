@@ -6,105 +6,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>McLain's Family Property Services | Land Clearing Ontario</title>
+<title>McLain's Family Property Services</title>
 
-<meta name="description" content="Land clearing, forestry mulching, brush cutting, storm cleanup and rural property services across Kingston, Gananoque, Napanee, Arden and Chatham-Kent Ontario.">
+<meta name="description" content="Poisonous and invasive plant removal, property cleanup, brush clearing, and lakefront maintenance serving Kingston, Napanee, Gananoque, Arden, and Chatham-Kent.">
+
+<meta name="keywords" content="poison ivy removal, invasive plants Ontario, property cleanup Kingston, brush clearing Ontario, lakefront weed removal">
 
 <style>
 
+/* ------------------ GLOBAL ------------------ */
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 color:white;
-
-/* black ash wood grain */
-background:
+background-color:black;
+background-image:
 repeating-linear-gradient(
-90deg,
-#000 0px,
-#000 2px,
-#111 4px,
-#000 6px
+45deg,
+rgba(255,255,255,0.05) 0px,
+rgba(255,255,255,0.05) 2px,
+transparent 2px,
+transparent 8px
+),
+repeating-linear-gradient(
+-45deg,
+rgba(255,255,255,0.05) 0px,
+rgba(255,255,255,0.05) 2px,
+transparent 2px,
+transparent 8px
 );
+background-size:12px 12px;
 }
+
+/* ------------------ HEADER ------------------ */
 
 header{
-background:#000;
-padding:20px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:999;
+background:#111;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:3px solid #444;
 }
 
-h1,h2,h3{
-text-align:center;
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+/* ------------------ NAV ------------------ */
+
+nav ul{
+list-style:none;
+display:flex;
+margin:0;
+padding:0;
+}
+
+nav li{
+position:relative;
 }
 
 nav a{
 color:white;
-margin:10px;
 text-decoration:none;
-font-weight:bold;
+padding:12px 18px;
+display:block;
 }
+
+nav a:hover{
+background:#333;
+}
+
+/* dropdown */
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#111;
+min-width:200px;
+border:1px solid #444;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+.dropdown-content a{
+padding:10px;
+}
+
+/* ------------------ SECTIONS ------------------ */
 
 section{
+padding:60px 20px;
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
 }
 
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+/* red separator */
+
+.separator{
+height:6px;
+background:#b30000;
+width:100%;
 }
 
-.card{
-background:#111;
-padding:20px;
-border-radius:8px;
-}
+/* ------------------ HERO ------------------ */
 
 .hero{
 text-align:center;
 padding:120px 20px;
 }
 
+.hero h1{
+font-size:40px;
+}
+
+/* ------------------ SERVICES ------------------ */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:#111;
+border:2px solid #444;
+padding:20px;
+border-radius:6px;
+}
+
+/* ------------------ FORM ------------------ */
+
+form{
+display:flex;
+flex-direction:column;
+max-width:500px;
+}
+
+input, textarea{
+margin-bottom:12px;
+padding:10px;
+border:none;
+border-radius:4px;
+}
+
+button{
+padding:12px;
+background:#b30000;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff0000;
+}
+
+/* ------------------ CHATBOT ------------------ */
+
+.chatbot{
+position:fixed;
+bottom:20px;
+right:20px;
+width:260px;
+background:#111;
+border:2px solid #444;
+padding:15px;
+}
+
+.chatbot input{
+width:100%;
+}
+
+/* ------------------ MAPLE LEAVES ------------------ */
+
+.leaf{
+position:fixed;
+top:-20px;
+font-size:18px;
+animation:fall linear infinite;
+opacity:0.7;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
 footer{
-background:black;
-padding:50px;
+background:#111;
+padding:30px;
 text-align:center;
+border-top:3px solid #444;
 }
 
 </style>
-
-<script type="application/ld+json">
-
-{
-"@context":"https://schema.org",
-"@type":"LocalBusiness",
-"name":"McLain's Family Property Services",
-"telephone":"+1-343-364-9474",
-"email":"dakota.james@live.ca",
-"areaServed":[
-"Kingston Ontario",
-"Gananoque Ontario",
-"Napanee Ontario",
-"Arden Ontario",
-"Chatham-Kent Ontario"
-],
-"serviceType":[
-"Land Clearing",
-"Brush Cutting",
-"Forestry Mulching",
-"Storm Cleanup",
-"Lakefront Cleanup",
-"Wild Parsnip Removal"
-]
-}
-
-</script>
 
 </head>
 
@@ -112,273 +212,149 @@ text-align:center;
 
 <header>
 
-<h1>McLain's Family Property Services</h1>
+<div class="logo">McLain's Property Services</div>
 
 <nav>
 
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li class="dropdown">
 <a href="#services">Services</a>
-<a href="#areas">Service Areas</a>
-<a href="#projects">Projects</a>
-<a href="#plants">Plant Identification</a>
-<a href="#contact">Contact</a>
+
+<div class="dropdown-content">
+<a href="#invasive">Invasive Plant Removal</a>
+<a href="#cleanup">Property Cleanup</a>
+<a href="#brush">Brush Clearing</a>
+<a href="#lake">Lakefront Services</a>
+</div>
+
+</li>
+
+<li><a href="#areas">Service Areas</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
 
 </nav>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
-<h2>Professional Land & Property Services</h2>
+<h1>McLain's Family Property Services</h1>
 
 <p>
-
-Serving Kingston • Gananoque • Napanee • Arden • Chatham-Kent
-
+Specializing in poisonous and invasive plant removal, property cleanup,
+brush clearing, and waterfront maintenance.
 </p>
 
 <p>
-
-Call or Text  
-<b>+1 343 364 9474</b>
-
-</p>
-
-<p>
-
-Email  
-<b>dakota.james@live.ca</b>
-
+Serving Kingston, Napanee, Gananoque, Arden, and Chatham-Kent.
 </p>
 
 </section>
+
+<div class="separator"></div>
 
 <section id="services">
 
 <h2>Our Services</h2>
 
-<div class="card-grid">
+<div class="services">
 
-<div class="card">
-<h3>Land Clearing</h3>
-<p>Lot clearing, field reclamation and overgrown property restoration.</p>
+<div class="service-card" id="invasive">
+<h3>Invasive & Poisonous Plant Removal</h3>
+<p>
+Safe identification and removal of plants such as poison ivy,
+wild parsnip, and other hazardous vegetation.
+</p>
 </div>
 
-<div class="card">
-<h3>Brush Cutting</h3>
-<p>Heavy brush removal for fields, trails and rural properties.</p>
+<div class="service-card" id="cleanup">
+<h3>Property Cleanup</h3>
+<p>
+Full property cleanup including yard waste, overgrowth,
+storm debris, and neglected land restoration.
+</p>
 </div>
 
-<div class="card">
-<h3>Forestry Mulching</h3>
-<p>Efficient vegetation removal that leaves soil protected.</p>
+<div class="service-card" id="brush">
+<h3>Brush Clearing</h3>
+<p>
+Removal of dense brush, saplings, and overgrown areas
+to reclaim usable land and trails.
+</p>
 </div>
 
-<div class="card">
-<h3>Storm Cleanup</h3>
-<p>Tree fall cleanup and property restoration after storms.</p>
-</div>
-
-<div class="card">
-<h3>Lakefront Cleanup</h3>
-<p>Restore shoreline properties and lake access areas.</p>
-</div>
-
-<div class="card">
-<h3>Wild Parsnip Removal</h3>
-<p>Safe removal of dangerous invasive plants.</p>
+<div class="service-card" id="lake">
+<h3>Lakefront & Waterfront Work</h3>
+<p>
+Shoreline cleanup, aquatic weed removal,
+dock access clearing, and water edge restoration.
+</p>
 </div>
 
 </div>
 
 </section>
 
+<div class="separator"></div>
+
 <section id="areas">
 
-<h2>Primary Service Areas</h2>
+<h2>Service Areas</h2>
 
-<p style="text-align:center">
+<p>
 
 Kingston  
-Gananoque  
 Napanee  
+Gananoque  
 Arden  
 Chatham-Kent  
 
 </p>
 
-<h2>Surrounding Communities</h2>
+<p>
 
-<div class="card-grid">
+We also serve surrounding rural communities within roughly 100km.
 
-<div class="card">Odessa</div>
-<div class="card">Amherstview</div>
-<div class="card">Sydenham</div>
-<div class="card">Harrowsmith</div>
-<div class="card">Verona</div>
-<div class="card">Lansdowne</div>
-<div class="card">Mallorytown</div>
-<div class="card">Seeley's Bay</div>
-<div class="card">Bath</div>
-<div class="card">Yarker</div>
-<div class="card">Camden East</div>
-<div class="card">Deseronto</div>
-<div class="card">Selby</div>
-<div class="card">Sharbot Lake</div>
-<div class="card">Cloyne</div>
-<div class="card">Northbrook</div>
-<div class="card">Kaladar</div>
-<div class="card">Wallaceburg</div>
-<div class="card">Tilbury</div>
-<div class="card">Blenheim</div>
-<div class="card">Ridgetown</div>
-<div class="card">Dresden</div>
-
-</div>
+</p>
 
 </section>
 
-<section id="projects">
-
-<h2>Recent Projects</h2>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>Brush Clearing – Kingston</h3>
-
-<p>
-Overgrown rural property cleared using forestry mulching equipment to restore access.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Lakefront Restoration – Gananoque</h3>
-
-<p>
-Removed dense vegetation and restored shoreline access for a lakefront property.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Field Reclamation – Napanee</h3>
-
-<p>
-Large abandoned field restored with brush cutting and mulching.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Storm Damage Cleanup – Arden</h3>
-
-<p>
-Removed fallen trees and debris after major storm damage.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="plants">
-
-<h2>Invasive Plant Identification</h2>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>Wild Parsnip</h3>
-
-<p>
-
-Yellow umbrella shaped flowers.  
-Causes severe burns when sap touches skin in sunlight.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Giant Hogweed</h3>
-
-<p>
-
-Very large plant with white umbrella flowers.  
-Sap can cause severe blistering burns.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Buckthorn</h3>
-
-<p>
-
-Invasive shrub that spreads aggressively in forests and fields.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Poison Ivy</h3>
-
-<p>
-
-Leaves of three plant that causes itchy rash when touched.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Dog Strangling Vine</h3>
-
-<p>
-
-Highly invasive vine that spreads rapidly across rural properties.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
+<div class="separator"></div>
 
 <section id="contact">
 
-<h2>Request a Quote</h2>
+<h2>Request a Free Quote</h2>
 
-<p style="text-align:center">
+<p>
+Leave a message and we will contact you for a free quote today.
+</p>
 
-Call or Text
+<form action="mailto:dakota.james@live.ca" method="post" enctype="text/plain">
 
-<br><br>
+<input type="text" name="name" placeholder="Your Name" required>
 
-<b>+1 343 364 9474</b>
+<input type="email" name="email" placeholder="Email" required>
 
-<br><br>
+<input type="tel" name="phone" placeholder="Phone">
 
-Email Quotes To
+<input type="text" name="preferred-date" placeholder="Preferred Date">
 
-<br>
+<input type="text" name="preferred-time" placeholder="Preferred Time">
 
-<b>dakota.james@live.ca</b>
+<textarea name="message" rows="4" placeholder="Describe your project"></textarea>
 
+<button type="submit">Request Quote</button>
+
+</form>
+
+<p>
+Phone: +1 343-364-9474
 </p>
 
 </section>
@@ -386,13 +362,67 @@ Email Quotes To
 <footer>
 
 <p>
-
-McLain's Family Property Services  
-Serving Eastern Ontario
-
+© McLain's Family Property Services
 </p>
 
 </footer>
+
+<!-- CHATBOT -->
+
+<div class="chatbot">
+
+<div id="botReply">
+Hello! Ask about services or quotes.
+</div>
+
+<input id="userInput" placeholder="Ask something">
+
+<button onclick="reply()">Send</button>
+
+</div>
+
+<script>
+
+/* chatbot */
+
+function reply(){
+
+let input=document.getElementById("userInput").value.toLowerCase()
+
+let response="Please contact Dakota for a free quote."
+
+if(input.includes("poison") || input.includes("ivy"))
+response="We specialize in poisonous plant removal such as poison ivy and wild parsnip."
+
+if(input.includes("lake"))
+response="We provide lakefront clearing and aquatic weed removal."
+
+if(input.includes("quote"))
+response="Leave your contact details in the quote form and we will get back to you."
+
+document.getElementById("botReply").innerText=response
+
+}
+
+/* maple leaf animation */
+
+for(let i=0;i<20;i++){
+
+let leaf=document.createElement("div")
+
+leaf.className="leaf"
+
+leaf.innerHTML="🍁"
+
+leaf.style.left=Math.random()*100+"vw"
+
+leaf.style.animationDuration=(5+Math.random()*10)+"s"
+
+document.body.appendChild(leaf)
+
+}
+
+</script>
 
 </body>
 </html>
